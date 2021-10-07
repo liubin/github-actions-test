@@ -2,10 +2,11 @@ on:
   pull_request_target:
     types:
       - opened
+      - synchronize
       - labeled
       - unlabeled
     branches:
-      - dev 
+      - main 
 
 jobs:
   show_env:
