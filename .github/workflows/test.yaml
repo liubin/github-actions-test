@@ -1,7 +1,13 @@
 on:
-  - push
-  - pull_request
-  - pull_request_target
+  pull_request_target:
+    types:
+      - opened
+      - reopened
+      - labeled
+      - unlabeled
+  pull_request:
+    branches:
+      - main
 
 jobs:
   show_env:
