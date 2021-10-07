@@ -6,7 +6,7 @@ on:
       - labeled
       - unlabeled
     branches:
-      - dev 
+      - main 
 
 jobs:
   show_env:
