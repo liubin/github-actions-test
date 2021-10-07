@@ -1,5 +1,6 @@
 on:
-  pull_request_target:
+#  pull_request_target:
+  pull_request:
     types:
       - opened
       - synchronize
@@ -12,5 +13,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: env | grep GITHUB | sort
-
+      - name: show env
+        env:
+          EVENT_NAME:  ${{ github.event_name }}
+          EVENT_ACTION: ${{ github.event.action }}
+        if: |
+          (github.event.action == 'labeled') || (github.event.action == 'unlabeled')
+        run: |
+          echo ${EVENT_NAME}
+          echo ${EVENT_ACTION}
