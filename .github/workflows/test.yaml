@@ -5,7 +5,8 @@ on:
       - synchronize
       - labeled
       - unlabeled
-
+    branches:
+      - main
 jobs:
   show_env:
     runs-on: ubuntu-latest
