@@ -2,12 +2,10 @@ on:
   pull_request_target:
     types:
       - opened
-      - reopened
       - labeled
       - unlabeled
-  pull_request:
     branches:
-      - main
+      - dev 
 
 jobs:
   show_env:
