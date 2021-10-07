@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: env | sort
+      - run: env | grep GITHUB | sort
 
