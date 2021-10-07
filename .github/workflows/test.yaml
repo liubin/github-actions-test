@@ -1,0 +1,12 @@
+on:
+  - push
+  - pull_request
+  - pull_request_target
+
+jobs:
+  show_env:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: env | sort
+
