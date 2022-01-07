@@ -12,5 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: env | grep GITHUB | sort
+      - run: |
+          env | grep GITHUB | sort
+          echo "${{ toJson(github.event.pull_request.labels) }}"
+          echo "${{ toJson(github.event.pull_request.labels.*.name) }}"
 
