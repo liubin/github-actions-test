@@ -10,7 +10,8 @@ on:
 jobs:
   show_env:
     runs-on: ubuntu-latest
-
+    env:
+      IS_BUG: ${{ contains(github.event.pull_request.labels.*.name, 'bug') }}
     steps:
       - run: |
           env | grep GITHUB | sort
